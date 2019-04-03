@@ -105,7 +105,7 @@ public class NumberTwoTest {
     @Test
     public void test9() {
         skipIfNotImplemented(() -> {
-            boolean expected = false;
+            boolean expected = true; //was previously false
             boolean actual = two.evenlySpaced(5, 4, 3);
 
             assertEquals(expected, actual);
