@@ -1,4 +1,6 @@
 package challenges;
+import java.util.Arrays;
+import java.lang.Math;
 
 public class NumberTwo {
 
@@ -24,5 +26,7 @@ public class NumberTwo {
     public boolean evenlySpaced(int a, int b, int c){
         // Delete the line below and implement the method!
         throw new UnsupportedOperationException();
-    }
+
+
+        }
 }

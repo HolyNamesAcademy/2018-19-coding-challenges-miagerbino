@@ -14,6 +14,14 @@ public class NumberFour {
      */
     public int[] leftRotation(int[] input, int rotations) {
         // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        //throw new UnsupportedOperationException();
+        int length = input.length;
+        for(int i = length-rotations; i<length;i++){
+            input[i]=input[rotations+1];
+        }
+        for (int i = 0; i<length-rotations; i++){
+            input[i]=input[i+rotations];
+        }
+        return input;
     }
 }

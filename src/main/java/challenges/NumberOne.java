@@ -27,10 +27,10 @@ public class NumberOne {
             if (numbers[i]<=target)
                 possibleNums.add(numbers[i]);
         }
-        int [] indices;
+        int [] indices = new int[2];
         for(int i = 0; i<possibleNums.size(); i++){
             for (int j = 0; i<possibleNums.size(); i++){
-                if (((possibleNums.get(i)+possibleNums.get(j)) == target) && (i!=j)) {
+                if ((target == ((int)possibleNums.get(i)+(int)possibleNums.get(j))) && (i!=j)) {
                     indices = new int[]{i, j};
                 }
             }
