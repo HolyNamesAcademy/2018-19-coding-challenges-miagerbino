@@ -1,4 +1,5 @@
 package challenges;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.lang.Math;
 
@@ -25,8 +26,38 @@ public class NumberTwo {
      */
     public boolean evenlySpaced(int a, int b, int c){
         // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
-
-
+        //throw new UnsupportedOperationException();
+        ArrayList<Integer>nums = new ArrayList<Integer>();
+        nums.add(a);
+        nums.add(b);
+        nums.add(c);
+        if (a>c && b>c) {
+            nums.add(0, c);
+            nums.remove(3);
+            if (a > b) {
+                nums.add(a);
+                nums.remove(1);
+            }
         }
+        if (a>b && c>b) {
+            nums.add(0, b);
+            nums.remove(2);
+            if (a > c) {
+                nums.add(a);
+                nums.remove(1);
+            }
+        }
+        if (c>a && b>a) {
+            if (b > c) {
+                nums.add(b);
+                nums.remove(1);
+            }
+        }
+        if ((nums.get(1)-nums.get(0))==(nums.get(2)-nums.get(1))){
+            return true;
+        }
+        else
+            return false;
+    }
 }
+

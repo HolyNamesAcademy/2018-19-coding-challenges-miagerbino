@@ -16,12 +16,17 @@ public class NumberFour {
         // Delete the line below and implement the method!
         //throw new UnsupportedOperationException();
         int length = input.length;
+        if (rotations >= length)
+            rotations -= length;
+        int [] rotated = new int [length];
+        int j=0;
         for(int i = length-rotations; i<length;i++){
-            input[i]=input[rotations+1];
+            rotated[i]=input[j];
+            j++;
         }
         for (int i = 0; i<length-rotations; i++){
-            input[i]=input[i+rotations];
+            rotated[i]=input[i+rotations];
         }
-        return input;
+        return rotated;
     }
 }

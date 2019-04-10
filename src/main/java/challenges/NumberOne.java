@@ -29,9 +29,11 @@ public class NumberOne {
         }
         int [] indices = new int[2];
         for(int i = 0; i<possibleNums.size(); i++){
-            for (int j = 0; i<possibleNums.size(); i++){
+            for (int j = 0; j<possibleNums.size(); j++){
                 if ((target == ((int)possibleNums.get(i)+(int)possibleNums.get(j))) && (i!=j)) {
-                    indices = new int[]{i, j};
+                    indices[0] = i-1;
+                    indices[1] = j+1;
+                    break;
                 }
             }
         }
