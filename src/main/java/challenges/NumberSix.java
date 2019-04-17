@@ -27,6 +27,18 @@ public class NumberSix {
      */
     public String printLinkedList(LinkedListNode head) {
         // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        //throw new UnsupportedOperationException();
+        String listedList = "";
+        LinkedListNode current = head;
+        listedList += current.getData() + " ";
+        LinkedListNode nextElement = current.getNext();
+        while(nextElement != null){
+            current = current.getNext();
+            nextElement = current.getNext();
+            listedList += current.getData() + " ";
+        }
+        if (listedList.substring(listedList.length())==" ");
+            listedList = listedList.substring(0,listedList.length()-1);
+        return listedList;
     }
 }

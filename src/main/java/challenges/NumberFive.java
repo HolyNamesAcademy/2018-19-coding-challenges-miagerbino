@@ -37,6 +37,12 @@ public class NumberFive {
         if(word1.length()!=word2.length()){
             return false;
         }
+        word1 = word1.toLowerCase();
+        word2 = word2.toLowerCase();
+        if(word1.equals(word2)) {
+            return true;
+        }
+
         ArrayList <Character> word1letters = new ArrayList <Character>();
         ArrayList <Character> word2letters = new ArrayList <Character>();
 
@@ -45,6 +51,8 @@ public class NumberFive {
             word1letters.add(word1.charAt(i));
             word2letters.add(word2.charAt(i));
         }
+        word1letters = word1letters;
+        word2letters = word2letters;
 
         //check each character against the other word
         int a = 0;
@@ -57,12 +65,14 @@ public class NumberFive {
                     a--;
                     b--;
                 }
-            break;
+            b++;
             }
         a++;
-        b++;
+        b=0;
         }
-        if(word1letters.isEmpty()&&word2letters.isEmpty()){
+        word1letters = word1letters;
+        word2letters = word2letters;
+        if(word1letters.isEmpty()){
             return true;
         }
         return false;
