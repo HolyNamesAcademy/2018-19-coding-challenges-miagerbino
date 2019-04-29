@@ -51,28 +51,30 @@ public class NumberFive {
             word1letters.add(word1.charAt(i));
             word2letters.add(word2.charAt(i));
         }
-        word1letters = word1letters;
-        word2letters = word2letters;
+
+        int length = word1letters.size();
 
         //check each character against the other word
-        int a = 0;
-        int b = 0;
         for (int i = 0; i<word1letters.size(); i++){
             for (int j = 0; j<word1letters.size(); j++){
-                if(word1letters.get(a).equals(word2letters.get(b))){
-                    word1letters.remove(a);
-                    word2letters.remove(b);
-                    a--;
-                    b--;
+                if(word1letters.get(0).equals(word2letters.get(j))){
+                    word1letters.remove(0);
+                    word2letters.remove(j);
+                    break;
                 }
-            b++;
             }
-        a++;
-        b=0;
         }
-        word1letters = word1letters;
-        word2letters = word2letters;
-        if(word1letters.isEmpty()){
+        for (int i = 0; i<word1letters.size(); i++){
+            for (int j = 0; j<word1letters.size(); j++){
+                if(word1letters.get(0).equals(word2letters.get(j))){
+                    word1letters.remove(0);
+                    word2letters.remove(j);
+                    break;
+                }
+            }
+        }
+
+        if(word1letters.isEmpty()||word1letters.equals(word2letters)){
             return true;
         }
         return false;
